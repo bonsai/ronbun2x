@@ -42,13 +42,15 @@ research-rakugo / yonkoma / etc.
       │ arXiv URL
       ▼
   ronbun2x
-      │ structured handoff
+      │ structured handoff JSON
       ▼
-  Generation PL
-      │
+  kamishibai
+      │ HTML/SVG/CSS animation templates
       ▼
-  SF落語 / 4コマ / 動画 / audio
+  Generation PL / 紙芝居 / 動画 / audio
 ```
+
+See also: [bonsai/kamishibai](https://github.com/bonsai/kamishibai) — reusable animation show templates.
 
 ## Stack
 
