@@ -33,6 +33,7 @@ def fetch_arxiv_meta(arxiv_id: str) -> ArxivMeta:
 
     title = _extract(html, r'<h1[^>]*class="title[^"]*"[^>]*>(.*?)</h1>', "")
     title = _strip_html(title)
+    title = re.sub(r"^Title:\s*", "", title, flags=re.I).strip()
 
     abstract = _extract(html, r'<blockquote[^>]*class="abstract[^"]*"[^>]*>(.*?)</blockquote>', "")
     abstract = _strip_html(abstract).replace("Abstract:", "").strip()

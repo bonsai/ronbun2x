@@ -15,7 +15,8 @@ export async function fetchArxivMeta(arxivId: string): Promise<ArxivMeta> {
   if (!res.ok) throw new Error(`arxiv fetch failed: ${res.status}`);
   const html = await res.text();
 
-  const title = extractTag(html, /<h1[^>]*class="title[^"]*"[^>]*>(.*?)<\/h1>/s);
+  let title = extractTag(html, /<h1[^>]*class="title[^"]*"[^>]*>(.*?)<\/h1>/s);
+  title = stripHtml(title).replace(/^Title:\s*/i, "");
   const abstract = extractTag(html, /<blockquote[^>]*class="abstract[^"]*"[^>]*>(.*?)<\/blockquote>/s)
     .replace("Abstract:", "")
     .trim();
@@ -26,7 +27,7 @@ export async function fetchArxivMeta(arxivId: string): Promise<ArxivMeta> {
 
   return {
     arxiv_id: arxivId,
-    title: stripHtml(title),
+    title,
     authors,
     abstract: stripHtml(abstract),
     year,
