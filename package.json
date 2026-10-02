@@ -1,0 +1,17 @@
+{
+  "name": "ronbun2x",
+  "version": "0.1.0",
+  "description": "arXiv-to-X generation handoff pipeline",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "check": "tsc --noEmit"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241001.0",
+    "typescript": "^5.6.0",
+    "wrangler": "^3.80.0"
+  }
+}
