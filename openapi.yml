@@ -5,9 +5,6 @@ info:
   description: >-
     arXiv論文を取得し、4つの表示・生成モード向けに構造化したJSONへ変換する。
     このAPIは生成物そのものではなく、後続のGeneration Pipelineへ渡すハンドオフを返す。
-servers:
-  - url: https://ronbun2x.{worker-domain}
-    description: Cloudflare Worker deployment URL; replace with the deployed Worker URL.
 paths:
   /api:
     get:
