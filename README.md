@@ -13,6 +13,8 @@ arXiv 論文を **任意の生成 PL（Generation Pipeline）** へ渡せる研�
 
 ## API
 
+OpenAPI 3.1 の契約定義: [`openapi.yml`](openapi.yml)。`x` は4つの表示・生成モードを選ぶ enum として定義し、各モードは共通の `ronbun2x.handoff.v1` で下流へ渡す。
+
 ```
 GET /api?url=https://arxiv.org/abs/2209.05161&x=rakugo
 GET /api?url=https://arxiv.org/abs/2209.05161&x=yonkoma
